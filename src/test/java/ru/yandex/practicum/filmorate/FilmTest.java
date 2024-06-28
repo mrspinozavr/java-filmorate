@@ -70,7 +70,7 @@ class FilmTest {
 
     @Test
     void shouldNotCreateFilmIfReleaseDateIsWrong() {
-        film.setReleaseDate(LocalDate.of(1895, 12 ,27));
+        film.setReleaseDate(LocalDate.of(1895, 12,27));
 
         Set<ConstraintViolation<Film>> violations = validator.validate(film);
 
