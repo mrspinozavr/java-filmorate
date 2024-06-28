@@ -20,7 +20,7 @@ public class User {
     private String name;
     @NotNull
     @NotBlank
-    @Pattern (regexp = "^\\S+$" )
+    @Pattern (regexp = "^\\S+$")
     private String login;
     @Email
     @NotBlank
