@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 public class RealiseDateValidator implements ConstraintValidator<RealiseDateContraint, LocalDate> {
     @Override
-    public boolean isValid(LocalDate localDate, ConstraintValidatorContext context) {
+    public boolean isValid (LocalDate localDate, ConstraintValidatorContext context) {
         if (localDate == null) {
             return true;
         }

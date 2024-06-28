@@ -22,7 +22,7 @@ public class Film {
     private String description;
     @NotNull
     @RealiseDateContraint
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat (pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;
     @Positive
     @NotNull

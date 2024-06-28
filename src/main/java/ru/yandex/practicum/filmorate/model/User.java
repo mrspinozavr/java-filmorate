@@ -14,18 +14,18 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class User {
-    @Null(groups = Marker.onCreate.class)
+    @Null (groups = Marker.onCreate.class)
     @NotNull(groups = Marker.onUpdate.class)
     private Long id;
     private String name;
     @NotNull
     @NotBlank
-    @Pattern(regexp = "^\\S+$" )
+    @Pattern (regexp = "^\\S+$" )
     private String login;
     @Email
     @NotBlank
     private String email;
     @Past
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat (pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 }
