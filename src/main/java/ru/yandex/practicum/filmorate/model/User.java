@@ -3,7 +3,7 @@ package ru.yandex.practicum.filmorate.model;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
-import ru.yandex.practicum.filmorate.validator.RealiseDateContraint;
+import ru.yandex.practicum.filmorate.validator.Marker;
 
 import java.time.LocalDate;
 
@@ -13,18 +13,19 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class Film {
+public class User {
+    @Null(groups = Marker.onCreate.class)
+    @NotNull(groups = Marker.onUpdate.class)
     private Long id;
+    private String name;
     @NotNull
     @NotBlank
-    private String name;
-    @Size (max = 200)
-    private String description;
-    @NotNull
-    @RealiseDateContraint
+    @Pattern(regexp = "^\\S+$" )
+    private String login;
+    @Email
+    @NotBlank
+    private String email;
+    @Past
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate releaseDate;
-    @Positive
-    @NotNull
-    private int duration;
+    private LocalDate birthday;
 }
