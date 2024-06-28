@@ -25,7 +25,7 @@ public class FilmController {
     }
 
     @PostMapping
-    public Film create(@Valid  @RequestBody Film film){
+    public Film create(@Valid  @RequestBody Film film) {
         log.info("Создание фильма {}", film);
         film.setId(generateId());
         films.put(film.getId(), film);
