@@ -28,7 +28,7 @@ public class UserController {
 
     @PostMapping
     @Validated(Marker.onCreate.class)
-    public User create(@Valid @RequestBody User user){
+    public User create(@Valid @RequestBody User user) {
         log.info("Создание пользователя {}", user);
         if (user.getName() == null || user.getName().isBlank()) {
             user.setName(user.getLogin());
